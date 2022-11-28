@@ -8,6 +8,28 @@ import { UserLoginComponent } from './user-login/user-login.component';
 import { NonVegComponent } from './non-veg/non-veg.component';
 import { VegComponent } from './veg/veg.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+
+const myRoute:Routes=[
+  {
+    path:"login",
+    component:UserLoginComponent
+  },
+  {
+    path:"restaurants",
+    component:RestaurantsComponent
+  },
+  {
+    path:"nonveg",
+    component:NonVegComponent
+  },
+  {
+    path:"veg",
+    component:VegComponent
+
+  }
+]
 
 @NgModule({
   declarations: [
@@ -20,7 +42,9 @@ import { NavigationComponent } from './navigation/navigation.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(myRoute),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
